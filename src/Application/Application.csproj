@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Accounts.Application</RootNamespace>
+		<AssemblyName>Accounts.Application</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.2.2" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.3.0" />
+		<PackageReference Include="Mapster" Version="7.2.0" />
+		<PackageReference Include="MassTransit" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.12" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+    <ItemGroup>
+        <SonarQubeSetting Include="sonar.coverage.exclusions">
+            <Value>**/Model/**</Value>
+        </SonarQubeSetting>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="ReportSubscription\Model\" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Accounts.Infrastructure</RootNamespace>
+		<AssemblyName>Accounts.Infrastructure</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
+		<PackageReference Include="Amazon.Lambda.Serialization.Json" Version="2.0.0" />
+		<PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
+		<PackageReference Include="Amazon.Lambda.SQSEvents" Version="2.1.0" />
+		<PackageReference Include="AWSSDK.Core" Version="3.7.103.13" />
+		<PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
+		<PackageReference Include="AWSSDK.KeyManagementService" Version="3.7.100.4" />
+		<PackageReference Include="AWSSDK.SecretsManager" Version="3.7.100.7" />
+		<PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.3.24" />
+		<PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.7.103.3" />
+		<PackageReference Include="AWSSDK.SQS" Version="3.7.2.21" />
+		<PackageReference Include="Correlate.Abstractions" Version="3.3.0" />
+		<PackageReference Include="CsvHelper" Version="15.0.10" />
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="DotNetCore.CAP" Version="6.2.0" />
+		<PackageReference Include="DotNetCore.CAP.Dashboard" Version="6.2.0" />
+		<PackageReference Include="DotNetCore.CAP.PostgreSql" Version="6.2.0" />
+		<PackageReference Include="FluentMigrator.Runner" Version="3.3.2" />
+		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.12" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Nito.AsyncEx" Version="5.1.2" />
+		<PackageReference Include="Npgsql" Version="6.0.6" />
+		<PackageReference Include="Savorboard.CAP.InMemoryMessageQueue" Version="6.0.0" />
+		<PackageReference Include="Serilog" Version="2.10.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Application\Application.csproj" />
+	</ItemGroup>
+    <ItemGroup>
+        <SonarQubeSetting Include="sonar.coverage.exclusions">
+            <Value>**/AWS/**,**/DatabaseConfigurationOptions.cs,**/AWSAccountsSecret.cs,**/AWSSecretManagerClientFactory.cs,**/DatabaseConfigurator.cs,**/Migrations/**,**/AccountsPersistenceDbContext.cs,**/Repository.cs,**/AccountsDbContext.cs,**/AWSAccountsSecret.cs,**/DataBaseConfigurationOptions.cs,**/AwsSimpleSystemManagementService.cs</Value>
+        </SonarQubeSetting>
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="Outbox">
+        <HintPath>..\WebUI\bin\Debug\net6.0\Outbox.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+</Project>

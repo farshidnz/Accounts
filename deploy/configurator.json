@@ -1,0 +1,121 @@
+[
+  {
+    "Key": "LOG_LEVEL",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "information"
+      },
+      {
+        "Scope": "live",
+        "Value": "error"
+      }
+    ]
+  },
+  {
+    "Key": "EnableDevops4",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": true
+      }
+    ]
+  },
+  {
+    "Key": "MaximumMessageCount",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": 10
+      }
+    ]
+  },
+  {
+    "Key": "SwitchToPostgresDB",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": true
+      },
+      {
+        "Scope": "uat",
+        "Value": false
+      },
+      {
+        "Scope": "prelive|live",
+        "Value": false
+      }
+    ]
+  },
+  {
+    "Key": "PostgresDbUsernameSsmParam",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "${Secret:PostgresDbUsername}"
+      }
+    ]
+  },
+  {
+    "Key": "PostgresDbPasswordSsmParam",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "${Secret:PostgresDbPassword}"
+      }
+    ]
+  },
+  {
+    "Key": "ConfigureDatabase",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "true"
+      }
+    ]
+  },
+  {
+    "Key": "MainSiteApiKeyName",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "/Security/Website/RegisterUser/ApiKeyRotated"
+      }
+    ]
+  },
+  {
+    "Key": "AccountDomainPIIKey",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "arn:aws:kms:${AWS_REGION}:${ACCOUNT_ID}:key/6bcd91be-62b4-4ee2-acf6-5a8ad216716e"
+      },
+      {
+        "Scope": "prelive|live",
+        "Value": "arn:aws:kms:${AWS_REGION}:${ACCOUNT_ID}:key/61051bb0-7f4e-49f9-9e4c-49876152c0f9"
+      }
+    ]
+  },
+  {
+    "Key": "ReportSubscriptionTopicName",
+    "Values": [
+      {
+        "Scope": "*",
+        "Value": "uat-ReportSubscription"
+      },
+      {
+        "Scope": "prelive|live",
+        "Value": "${Environment}-ReportSubscription"
+      }
+    ]
+  },
+  {
+      "Key": "ReportSubscriptionTopicArn",
+      "Values": [
+        {
+          "Scope": "*",
+          "Value": "arn:aws:sns:${AWS_REGION}:${ACCOUNT_ID}:${ReportSubscriptionTopicName}"
+        }
+      ]
+  }
+]

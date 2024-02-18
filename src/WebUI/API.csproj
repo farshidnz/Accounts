@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>Accounts.API</RootNamespace>
+		<AssemblyName>Accounts.API</AssemblyName>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<ServerGarbageCollection>false</ServerGarbageCollection>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Swagger\**" />
+		<Content Remove="Swagger\**" />
+		<EmbeddedResource Remove="Swagger\**" />
+		<None Remove="Swagger\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AWSSDK.Core" Version="3.7.103.13" />
+		<PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.2.20" />
+		<PackageReference Include="AWSSDK.EventBridge" Version="3.7.4.70" />
+		<PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
+		<PackageReference Include="AWSSDK.S3" Version="3.7.7.22" />
+		<PackageReference Include="AWSSDK.SecurityToken" Version="3.7.1.115" />
+		<PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.3.24" />
+		<PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.7.103.3" />
+		<PackageReference Include="AWSSDK.SQS" Version="3.7.2.21" />
+		<PackageReference Include="FluentMigrator" Version="3.3.2" />
+		<PackageReference Include="FluentMigrator.Console" Version="3.3.2" />
+		<PackageReference Include="FluentMigrator.Runner" Version="3.3.2" />
+		<PackageReference Include="FluentMigrator.Runner.Postgres" Version="3.3.2" />
+		<PackageReference Include="FluentValidation" Version="11.2.2" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.2.2" />
+		<PackageReference Include="Flurl.Http" Version="3.2.0" />
+		<PackageReference Include="Kralizek.Extensions.Configuration.AWSSecretsManager" Version="1.6.3" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.12" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Toolkit" Version="7.1.2" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="Npgsql" Version="6.0.6" />
+		<PackageReference Include="Polly" Version="7.2.2" />
+		<PackageReference Include="Serilog.AspNetCore" Version="4.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+		<PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.2" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="5.0.4" />
+		<PackageReference Include="System.Runtime" Version="4.3.1" />
+		<PackageReference Include="TimeZoneConverter" Version="3.4.0" />
+		<PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.8" />
+		<PackageReference Include="Amazon.Extensions.Configuration.SystemsManager" Version="2.0.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Application\Application.csproj">
+			<Private>true</Private>
+		</ProjectReference>
+		<ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+	</ItemGroup>
+    <ItemGroup>
+        <SonarQubeSetting Include="sonar.coverage.exclusions">
+            <Value>**/Startup.cs,Program.cs,**/Controllers/**,**/Middlewares/**</Value>
+        </SonarQubeSetting>
+    </ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Filters\" />
+	  <Folder Include="Options\" />
+	</ItemGroup>
+</Project>

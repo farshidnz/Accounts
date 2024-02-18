@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Accounts-v2-api
+  description: Accounts Microservice .net core  API v2
+  tags:
+    - rest
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: devs@cashrewards.com
+  definition:
+    $text: https://bitbucket.org/ShopGoDev/accounts/src/master/swagger/swagger.v2.yaml

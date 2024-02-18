@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Accounts
+  description: Accounts Microservice .net core 
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: devs@cashrewards.com
+  lifecycle: experimental
+  providesApis:
+    - Accounts-v1-api
+    - Accounts-v2-api
